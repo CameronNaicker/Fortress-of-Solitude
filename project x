@@ -1,0 +1,125 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package myshapeinterface;
+
+import java.util.Scanner;
+
+
+/**
+ *
+ * @author User
+ */
+public abstract class MyShapeInterface {
+    
+      
+    
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        
+        Scanner input=new Scanner(System.in);
+        
+        int length;
+        int width;
+        int base;
+        int height;
+        
+        System.out.println("Enter length :");    
+        length=input.nextInt();
+        System.out.println("Enter width :");
+        width=input.nextInt();
+        
+          Rectangle r=new Rectangle(length,width);
+          r.colorMe();
+        
+          
+          
+          System.out.println("Enter base: ");
+          base=input.nextInt();
+          System.out.println("Enter height: ");
+          height=input.nextInt();
+          
+          Triangle t=new Triangle(base,height);
+          t.colorMe();
+        
+        
+        
+        
+        
+    }
+    
+}
+
+interface Shape{
+      
+        public abstract double calcArea();
+        public abstract void draw();
+        public abstract void colorMe();
+        
+    
+}
+//no concrete methods in a interface
+
+class Rectangle implements Shape{
+    private int length;
+    private int width;
+    public Rectangle(int length,int width){
+        this.length=length;
+        this.width=width;
+        
+      
+        
+    }
+
+    @Override
+    public double calcArea() {
+        
+        double area=0;
+        
+        
+        return area=length*width;
+    }
+
+    @Override
+    public void draw() {
+        
+    }
+
+    @Override
+    public void colorMe() {
+        System.out.println("Area "+calcArea());
+    }
+    
+}
+class Triangle implements Shape{
+    private int base;
+    private int height;
+    
+    public Triangle(int base,int height){
+        
+        this.base=base;
+        this.height=height;
+        
+    }
+
+    @Override
+    public double calcArea() {
+        double area=0;
+        return area=((0.5)*base)*height;
+    }
+
+    @Override
+    public void draw() {
+    }
+
+    @Override
+    public void colorMe() {
+        System.out.println("Area "+calcArea());
+    }
+    
+}
