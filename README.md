@@ -1,2 +1,2 @@
-# Fortress-of-Solitude
-Home to all projects of Unicorns and Ghouls
+# Fortress-of-Solitude and code
+Home to all projects done in first year to year 2
